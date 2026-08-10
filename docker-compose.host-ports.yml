@@ -1,0 +1,19 @@
+# Host-development override for running projects/app outside Docker.
+# Redis is intentionally not published: host port 6379 is already used by
+# the local no-password Redis configured in projects/app/.env.local.
+services:
+  vectorDB:
+    ports:
+      - '5432:5432'
+
+  mongo:
+    ports:
+      - '27017:27017'
+
+  sandbox:
+    ports:
+      - '3002:3000'
+
+  fastgpt-plugin:
+    ports:
+      - '3003:3000'
