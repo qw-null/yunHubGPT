@@ -11,6 +11,7 @@ on:
 
 jobs:
   build-fastgpt-images:
+    if: github.repository == 'labring/FastGPT'
     permissions:
       packages: write
       contents: read
@@ -100,6 +101,7 @@ jobs:
           retention-days: 1
 
   release-fastgpt-images:
+    if: github.repository == 'labring/FastGPT'
     permissions:
       packages: write
       contents: read

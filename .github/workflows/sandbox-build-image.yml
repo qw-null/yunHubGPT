@@ -8,6 +8,7 @@ on:
       - 'v*'
 jobs:
   build-fastgpt-sandbox-images:
+    if: github.repository == 'labring/FastGPT'
     permissions:
       packages: write
       contents: read
@@ -86,6 +87,7 @@ jobs:
           retention-days: 1
 
   release-fastgpt-sandbox-images:
+    if: github.repository == 'labring/FastGPT'
     permissions:
       packages: write
       contents: read
