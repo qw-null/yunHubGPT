@@ -26,7 +26,7 @@ FROM node:20.14.0-alpine AS builder
 WORKDIR /app
 
 ARG proxy
-ARG base_url
+ARG base_url=/yunhub
 
 # copy common node_modules and one project node_modules
 COPY package.json pnpm-workspace.yaml .npmrc tsconfig.json ./
@@ -48,7 +48,7 @@ FROM node:20.14.0-alpine AS runner
 WORKDIR /app
 
 ARG proxy
-ARG base_url
+ARG base_url=/yunhub
 
 # create user and use it
 RUN addgroup --system --gid 1001 nodejs
